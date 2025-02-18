@@ -1,0 +1,46 @@
+.food-item img {
+    max-height: 100px;
+    width: auto;
+}
+.btn-register {
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+}
+.btn-volver {
+    background-color: #0753ff;
+    color: #000;
+    border: none;
+}
+.btn-update {
+    background-color: #665CF7;
+    color: #ffffff;
+    border: none;
+}
+.btn-update:hover {
+    background-color: #666CFC;
+    color: #665CF7;
+    border: none;
+}
+.btn-register:hover {
+    background-color: #e0a800;
+}
+.pagination {
+    justify-content: center;
+}
+a:link, a:visited {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a-update:link {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+a-update:hover {
+  background-color: white;
+  color: #665CF7;
+}
