@@ -13,7 +13,7 @@ import utp.soa.avance.model.Usuario;
 import utp.soa.avance.service.UserService;
 import utp.soa.avance.service.impl.UserDetailsServiceImpl;
 
-@RestController
+@Controller
 public class LoginController {
 
     @Autowired
@@ -30,7 +30,7 @@ public class LoginController {
     @GetMapping("/")
     public String viewHomePage(Model model) {
 
-        return "/login";
+        return "redirect:/login";
     }
 
     @GetMapping("/login")
