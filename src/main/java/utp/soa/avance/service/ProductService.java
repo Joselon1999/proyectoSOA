@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import utp.soa.avance.dto.UseProductRequest;
 import utp.soa.avance.model.Producto;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface ProductService {
@@ -19,4 +20,6 @@ public interface ProductService {
     Producto usarProducto(UseProductRequest request);
 
     Producto actualizarProducto(UseProductRequest request);
+
+    List<Producto> listAll();
 }

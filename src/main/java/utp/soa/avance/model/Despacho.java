@@ -1,6 +1,7 @@
 package utp.soa.avance.model;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,21 +9,21 @@ import lombok.Setter;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "subcategoria")
+@Table(name = "despacho")
 @Getter
 @Setter
-@NoArgsConstructor
-public class Subcategoria {
+@Builder
+public class Despacho {
+
 
     @Id
     @GeneratedValue(strategy = IDENTITY )
     private Long id;
 
-    @Column(name = "nom_categoria")
-    private String nombre;
+    private String uuid;
 
     @ManyToOne
-    private Categoria categoria;
+    private Sedes sedes;
 
     private boolean estado;
 }

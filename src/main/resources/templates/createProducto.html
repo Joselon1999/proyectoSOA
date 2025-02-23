@@ -22,15 +22,6 @@
       <div class="text-danger" th:if="${#fields.hasErrors('cantidad')}" th:errors="*{cantidad}"></div>
     </div>
 
-    <!-- Campo de donador -->
-    <div class="mb-3">
-      <label for="donador" class="form-label">Donador</label>
-      <select class="form-select" id="donador" name="donador" th:field="*{donador}" required>
-        <option value="" disabled selected>Selecciona un donador</option>
-        <option th:each="donador : ${donantes}" th:value="${donador.id_donador}" th:text="${donador.nombre}"></option>
-      </select>
-    </div>
-
     <div class="mb-3">
       <label for="categoria" class="form-label">Categoria</label>
       <select class="form-select" id="categoria" name="categoria" th:field="*{categoria}" required>
@@ -40,10 +31,13 @@
       <div th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></div>
     </div>
 
-    <!-- Campo de Fecha de Vencimiento -->
     <div class="mb-3">
-      <label for="fechaVencimiento" class="form-label">Fecha de Vencimiento</label>
-      <input type="date" class="form-control" id="fechaVencimiento" name="fechaVencimiento" th:field="*{fechaVencimiento}" required>
+      <label for="subcategoria" class="form-label">Categoria</label>
+      <select class="form-select" id="subcategoria" name="subcategoria" th:field="*{subcategoria}" required>
+        <option value="" disabled selected>Selecciona una categoria</option>
+        <option th:each="subcategoria : ${subcategorias}" th:value="${subcategoria.id}" th:text="${subcategoria.nombre}"></option>
+      </select>
+      <div th:if="${#fields.hasErrors('subcategoria')}" th:errors="*{subcategoria}"></div>
     </div>
 
     <!-- Botones -->

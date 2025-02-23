@@ -17,9 +17,7 @@
   <div class="d-flex justify-content-between align-items-center mb-4">
     <div>
       <h1>Alimentos</h1>
-      <p class="text-muted">Ordenado por fecha de vencimiento más reciente</p>
     </div>
-    <button class="btn btn-register"><a th:href="@{/admin/gestion-productos/alimentos/nuevo}">Registrar nuevo ingreso</a></button>
   </div>
   <div class="mb-4">
     <form th:action="@{/helper/gestion-productos}" method="get" class="d-flex align-items-center">
@@ -44,12 +42,7 @@
           <p class="mb-1 text-muted" th:text="'Cantidad: '+ ${alimento.cantidad}">
             Cantidad desconocida.
           </p>
-          <button class="btn btn-register"><a th:href="@{/helper/gestion-productos/{id}/usar(id = ${alimento.id_producto})}">Usar</a></button>
           <button class="btn btn-update"><a th:href="@{/admin/gestion-productos/{id}/modificar(id = ${alimento.id_producto})}">Modificar</a></button>
-        </div>
-        <div style="margin-left: auto; margin-right: 0;">
-          <p style="text-align: right"
-             class="mb-1 text-muted" th:text="'Fecha Vencimiento: '+ ${alimento.fechaVencimiento}">
         </div>
       </div>
     </div>

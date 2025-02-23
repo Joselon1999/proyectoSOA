@@ -15,6 +15,7 @@ import utp.soa.avance.model.Usuario;
 import utp.soa.avance.service.ProductService;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -102,5 +103,10 @@ public class ProductServiceImpl implements ProductService {
             log.warn("Request modificado: {} - {}",request.getProductId(),request.getCantidad());
         }
         return p;
+    }
+
+    @Override
+    public List<Producto> listAll() {
+        return productRepository.findAll();
     }
 }

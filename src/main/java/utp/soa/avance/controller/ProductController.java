@@ -13,6 +13,7 @@ import utp.soa.avance.model.Producto;
 import utp.soa.avance.model.Usuario;
 import utp.soa.avance.service.CategoryService;
 import utp.soa.avance.service.ProductService;
+import utp.soa.avance.service.SubcategoryService;
 import utp.soa.avance.service.UserService;
 import utp.soa.avance.service.session.IAuthenticationFacade;
 
@@ -29,6 +30,9 @@ public class ProductController {
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private SubcategoryService subcategoryService;
 
     @Autowired
     private UserService userService;
@@ -62,6 +66,7 @@ public class ProductController {
     public String mostrarFormulario(Model model) {
         model.addAttribute("alimento", new Producto());
         model.addAttribute("categorias", categoryService.listCategoria());
+        model.addAttribute("subcategorias", subcategoryService.listSubcategoria());
         return "createProducto";
     }
 

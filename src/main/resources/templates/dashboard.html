@@ -16,10 +16,10 @@
         </div>
     </div>
     <div class="row g-3">
-        <!-- Gestión Usuarios -->
+        <!-- Ingreso de Productos -->
         <div class="col-md-6">
-            <div class="card text-center p-3 border-0 shadow" th:onclick="'/admin/gestion-usuarios'">
-                <a th:href="@{/admin/gestion-usuarios}">
+            <div class="card text-center p-3 border-0 shadow" th:onclick="'/admin/gestion-productos/alimentos/nuevo'">
+                <a th:href="@{/admin/gestion-productos/alimentos/nuevo}">
                     <img th:src="@{/imagenes/agregar-producto.png}" alt="Ingreso de Productos"/>
                 </a>
                 <div class="card-body">
@@ -28,10 +28,12 @@
             </div>
         </div>
 
-        <!-- Gestión Roles -->
+        <!-- Gestión productos -->
         <div class="col-md-6">
-            <div class="card text-center p-3 border-0 shadow" th:onclick="'/gestion-roles'">
-                <img th:src="@{/imagenes/images.png}" alt="Gestión Roles"/>
+            <div class="card text-center p-3 border-0 shadow" th:onclick="'/helper/gestion-productos'">
+                <a th:href="@{/helper/gestion-productos}">
+                    <img th:src="@{/imagenes/images.png}" alt="gestion-productos"/>
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">Actualizar de Productos</h5>
                 </div>
@@ -40,8 +42,8 @@
 
         <!-- Gestión Informes -->
         <div class="col-md-6">
-            <div class="card text-center p-3 border-0 shadow" th:onclick="'/helper/informes'">
-                <a th:href="@{/helper/informes}">
+            <div class="card text-center p-3 border-0 shadow" th:onclick="'/admin/gestion-despacho/crearDespacho'">
+                <a th:href="@{/admin/gestion-despacho/crearDespacho}">
                     <img th:src="@{/imagenes/inventory.jpg}" alt="Despacho de Producto"/>
                 </a>
                 <div class="card-body">

@@ -23,25 +23,43 @@ VALUES
 
 INSERT INTO categoria (nom_categoria, estado)
 VALUES
-    ('Frutas y Verduras', 1),
-    ('Carnes y Pescados', 1),
-    ('Lácteos y Huevos', 1),
-    ('Panadería y Repostería', 1),
-    ('Abarrotes', 1),
-    ('Bebidas', 1);
+    ('Calzado', 1),
+    ('Accesorios', 1);
 
-
-INSERT INTO PRODUCTO(CANTIDAD,DESC_PRODUCTO,ESTADO_PRODUCTO,
-FECHA_INGRESO,USUARIO_ID_USUARIO,CATEGORIA_ID)
+INSERT INTO subcategoria (nom_categoria,CATEGORIA_ID, estado)
 VALUES
-(100,'Z','true','2024-11-01',1,2),
-(90,'Bolsa de Arroz de 1kg','true','2024-11-01',1,5),
-(110,'Lata de durazno','true','2024-11-01',1,1),
-(50,'Bolsa de lentejas de 1kg','true','2024-11-01',1,5);
+    ('Botines',1,1),
+    ('Balerinas',1,1),
+    ('Botas y botines',1,1),
+    ('Mocasinens',1,1),
+    ('Pantuflas',1,1),
+    ('Sandalias',1,1),
+    ('Tacos',1,1),
+    ('Zapatos',1,1),
+    ('Zapatos de vestir',1,1),
+    ('Zapatillas',1,1);
 
-INSERT INTO HISTORICO_ALIMENTARIA (CANTIDAD,FECHA_USO,PRODUCTO_ID_PRODUCTO)
+INSERT INTO tipoproducto (nom_categoria, estado)
 VALUES
-(100,'2024-12-01',1),
-(90,'2024-12-01',2),
-(110,'2024-12-01',3),
-(50,'2024-12-01',4);
+    ('Mujer',1),
+    ('Niño',1),
+    ('Niña',1),
+    ('Escolar',1);
+
+
+INSERT INTO PRODUCTO(cantidad,desc_producto,estado_producto,
+fecha_ingreso,usuario_id_usuario,categoria_id,subcategoria_id)
+VALUES
+(10,'Zapato Mocasín Negro 1CZL002','true','2025-01-01',1,1,4),
+(9,'Zapato De Vestir Wisky 1VGW012','true','2025-01-01',1,1,9),
+(11,'Zapato De Vestir Dark Brown 1VGW012','true','2025-01-01',1,1,9),
+(5,'Zapatilla Urbana Tan 1UDX002','true','2025-01-01',1,1,10);
+
+
+
+INSERT INTO sedes (nombre, direccion)
+VALUES
+    ('Calimod Store - Mall Aventura Santa Anita','Mall Aventura Santa Anita'),
+    ('Calimod - Plaza San Miguel','Plaza San Miguel'),
+    ('Calimod - Av. Brasil','Av. Brasil 730'),
+    ('Calimod Arequipa','Arequipa');

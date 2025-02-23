@@ -20,6 +20,6 @@ public class Sedes {
     @Id
     @GeneratedValue(strategy = IDENTITY )
     private Long id_sedes;
-    private String name;
+    private String nombre;
     private String direccion;
 }
