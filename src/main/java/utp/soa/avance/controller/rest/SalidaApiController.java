@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import utp.soa.avance.dto.FormularioSalidaDTO;
 import utp.soa.avance.model.Despacho;
 import utp.soa.avance.model.SalidaProducto;
+import utp.soa.avance.model.Transportista;
 import utp.soa.avance.service.*;
 
 import java.util.List;
@@ -24,9 +25,19 @@ public class SalidaApiController {
     private SalidaService salidaService;
 
 
+    @Autowired
+    private TransportistaService transportistaService;
+
+
+
     @GetMapping("")
     public ResponseEntity<List<SalidaProducto>> mostrarSalidas(@RequestParam(defaultValue = "1") int pagina,
                                                                @RequestParam(defaultValue = "5") int tamanio) {
         return ResponseEntity.ok(salidaService.listarSalidas(pagina,tamanio));
+    }
+
+    @GetMapping("/transportistas")
+    public ResponseEntity<List<Transportista>> mostrarTransportistas() {
+        return ResponseEntity.ok(transportistaService.listTransportistas());
     }
 }

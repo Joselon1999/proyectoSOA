@@ -87,4 +87,4 @@ VALUES
     (true,'Jose Jose'),
     (true,'Luis Miguel'),
     (true,'Julio Cesar'),
-    (true,'Mario Bros');
+    (true,'Mario Brasil');
