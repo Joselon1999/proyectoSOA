@@ -1,10 +1,7 @@
 package utp.soa.avance.model;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -13,6 +10,8 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Despacho {
 
 

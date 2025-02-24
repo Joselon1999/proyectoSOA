@@ -1,6 +1,8 @@
 package utp.soa.avance.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import utp.soa.avance.dao.DespachoRepository;
 import utp.soa.avance.dao.ProductRepository;
@@ -51,7 +53,17 @@ public class DespachoServiceImpl implements DespachoService {
         return despachoRepository.save(despacho);
     }
 
-    private ProductoCantidad buildProductoCantidad(Producto producto,int cantidad, String uuid) {
+    @Override
+    public Page<Despacho> listarDespachos(int pagina, int tamanio) {
+        return despachoRepository.findAll(PageRequest.of(pagina-1,tamanio));
+    }
+
+    @Override
+    public Despacho findDespacho(String uuid) {
+        return despachoRepository.findByUuid(uuid).orElse(Despacho.builder().build());
+    }
+
+    private ProductoCantidad buildProductoCantidad(Producto producto, int cantidad, String uuid) {
         return ProductoCantidad.builder()
                 .producto(producto)
                 .cantidad(cantidad)

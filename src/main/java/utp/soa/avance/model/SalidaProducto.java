@@ -5,21 +5,22 @@ import lombok.*;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
+@Entity
+@Table(name = "salidaproducto")
 @Getter
 @Setter
-@Builder
-@Entity
-@Table(name = "productocantidad")
-@AllArgsConstructor
 @NoArgsConstructor
-public class ProductoCantidad {
+@AllArgsConstructor
+@Builder
+public class SalidaProducto {
 
     @Id
     @GeneratedValue(strategy = IDENTITY )
     private Long id;
 
     @ManyToOne
-    private Producto producto;
-    private String uuid;
-    private int cantidad;
+    private Transportista transportista;
+
+    @ManyToOne
+    private Despacho despacho;
 }

@@ -18,4 +18,9 @@ public class SedesServiceImpl implements SedesService {
     public List<Sedes> listSedes() {
         return sedesRepository.findAll();
     }
+
+    @Override
+    public Sedes getSede(Long id) {
+        return sedesRepository.getReferenceById(id);
+    }
 }

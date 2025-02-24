@@ -1,8 +1,6 @@
 package utp.soa.avance.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Alimentos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="../static/css/main.css" th:href="@{/css/main.css}"  type="text/css"  rel="stylesheet">
+</head>
+<body>
+  <div>
+    <button class="btn btn-primary">
+      <a th:href="@{/dashboard}">Volver</a></button>
+  </div>
+  <div class="container mt-5">
+      <!-- Encabezado -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1>Peticion de Despacho:</h1>
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <label for="codigo">CÓDIGO:</label>
+        <input type="text" class="form-control" id="codigo" name="codigo" th:field="${despacho.uuid}" disabled>
+      </div>
+
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>CÓDIGO</th>
+            <th>DESCRIPCIÓN</th>
+            <th>STOCK</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="salida, stat : ${productos}">
+            <td th:text="${salida.id_producto}"></td>
+            <td th:text="${salida.descripcion}"></td>
+            <td th:text="${salida.cantidad}"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    <div class="mb-5">
+      <label for="sede">SEDE:</label>
+      <input type="text" class="form-control" id="sede" name="codigo" th:field="${sede.direccion}" disabled>
+    </div>
+    <form th:action="@{/admin/gestion-salida/enviarSede}" method="post" th:object="${salida}">
+      <!-- Campo oculto para despacho.id -->
+      <input type="hidden" th:field="*{despacho.id}" />
+
+      <!-- Campo para seleccionar el transportista -->
+      <div class="mb-5">
+        <label for="transportista">TRANSPORTISTA</label>
+        <select id="transportista" th:field="*{transportista.id_transportista}" class="form-select">
+          <option value="">Seleccione un transportista</option>
+          <option th:each="transportista : ${transportistas}"
+                  th:value="${transportista.id_transportista}"
+                  th:text="${transportista.nombre}"></option>
+        </select>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Procesar</button>
+      </div>
+    </form>
+
+  </div>
+</body>
+</html>

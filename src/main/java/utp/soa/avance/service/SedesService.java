@@ -7,4 +7,5 @@ import java.util.List;
 public interface SedesService {
 
     List<Sedes> listSedes();
+    Sedes getSede(Long id);
 }
