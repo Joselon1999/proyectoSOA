@@ -11,4 +11,5 @@ public interface SalidaService {
     List<ProductoCantidad> findByUuid(String uuid);
 
     SalidaProducto guardarRegistro(FormularioSalidaDTO formularioStockDTO);
+    List<SalidaProducto> listarSalidas(int pagina, int tamanio);
 }

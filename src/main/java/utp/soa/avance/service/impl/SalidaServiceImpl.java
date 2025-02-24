@@ -1,6 +1,7 @@
 package utp.soa.avance.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import utp.soa.avance.dao.DespachoRepository;
 import utp.soa.avance.dao.ProductoCantidadRepository;
@@ -44,5 +45,10 @@ public class SalidaServiceImpl implements SalidaService {
                         .transportista(transportista)
                         .despacho(despacho)
                         .build());
+    }
+
+    @Override
+    public List<SalidaProducto> listarSalidas(int pagina, int tamanio) {
+        return salidaProductoRepository.findAll(PageRequest.of(pagina-1,tamanio)).stream().toList();
     }
 }
