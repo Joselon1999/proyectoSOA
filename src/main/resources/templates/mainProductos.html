@@ -16,7 +16,7 @@
   <!-- Encabezado -->
   <div class="d-flex justify-content-between align-items-center mb-4">
     <div>
-      <h1>Alimentos</h1>
+      <h1>Productos</h1>
     </div>
   </div>
   <div class="mb-4">
@@ -32,13 +32,13 @@
       <button type="submit" class="btn btn-primary">Filtrar</button>
     </form>
   </div>
-  <!-- Lista de alimentos -->
+  <!-- Lista de Productos -->
   <div class="list-group">
     <div class="list-group-item p-3 food-item" th:each="alimento : ${alimentos}">
       <div class="d-flex align-items-center">
-        <img th:src="@{/imagenes/alimento.png}"  alt="Imagen del alimento" class="me-3"/>
+        <img th:src="@{/imagenes/alimento.png}"  alt="Imagen del Productos" class="me-3"/>
         <div>
-          <h5 th:text="${alimento.desc_producto}">Nombre del Alimento</h5>
+          <h5 th:text="${alimento.desc_producto}">Nombre del Productos</h5>
           <p class="mb-1 text-muted" th:text="'Cantidad: '+ ${alimento.cantidad}">
             Cantidad desconocida.
           </p>
