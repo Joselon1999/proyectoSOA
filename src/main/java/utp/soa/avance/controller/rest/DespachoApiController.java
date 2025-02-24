@@ -1,5 +1,6 @@
 package utp.soa.avance.controller.rest;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,8 @@ public class DespachoApiController {
     private DespachoService despachoService;
 
     @GetMapping("")
-    public ResponseEntity<List<Despacho>> mostrarSalidas(@RequestParam(defaultValue = "1") int pagina,
+    @Operation(summary = "Listar los Despachos planificados con la sede de Calimod")
+    public ResponseEntity<List<Despacho>> mostrarDespachos(@RequestParam(defaultValue = "1") int pagina,
                                                          @RequestParam(defaultValue = "5") int tamanio) {
         return ResponseEntity.ok(despachoService.listarDespachos(pagina,tamanio).stream().toList());
     }

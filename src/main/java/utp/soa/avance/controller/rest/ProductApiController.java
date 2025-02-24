@@ -1,5 +1,6 @@
 package utp.soa.avance.controller.rest;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -36,6 +37,7 @@ public class ProductApiController {
     private UserService userService;
 
     @GetMapping
+    @Operation(summary = "Listar los productos recepcionados de la fabrica para enviar a las sedes de Calimod")
     public ResponseEntity<List<Producto>> listProductos(
             @RequestParam(defaultValue = "1") int pagina,
             @RequestParam(defaultValue = "5") int tamanio,
