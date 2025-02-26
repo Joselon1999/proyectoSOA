@@ -8,7 +8,7 @@ public interface TransportistaService {
 
     Transportista crearTransportista(String nombre);
     List<Transportista> listTransportistas();
-
+    Transportista getTransportista(Long id);
     Transportista actualizarTransportista(Long id,String nombre);
     Transportista desactivarTransportista(Long id);
 }

@@ -50,4 +50,9 @@ public class TransportistaServiceImpl implements TransportistaService {
             return new Transportista();
         }
     }
+
+    @Override
+    public Transportista getTransportista(Long id) {
+        return transportistaRepository.getReferenceById(id);
+    }
 }
