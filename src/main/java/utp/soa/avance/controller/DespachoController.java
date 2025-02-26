@@ -38,6 +38,6 @@ public class DespachoController {
     @PostMapping("/descontar-stock/{uuid}")
     public String descontarStock(@PathVariable String uuid,@ModelAttribute FormularioStockDTO formularioStockDTO) {
         despachoService.descontarStock(formularioStockDTO);
-        return "redirect:/helper/gestion-productos";
+        return "redirect:/admin/gestion-salida";
     }
 }
