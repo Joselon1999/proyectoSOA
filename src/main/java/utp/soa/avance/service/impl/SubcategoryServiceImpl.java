@@ -21,4 +21,9 @@ public class SubcategoryServiceImpl implements SubcategoryService {
     public List<Subcategoria> listSubcategoria() {
         return subcategoryRepository.findAll();
     }
+
+    @Override
+    public Subcategoria getSubcategoria(Long id) {
+        return subcategoryRepository.getReferenceById(id);
+    }
 }

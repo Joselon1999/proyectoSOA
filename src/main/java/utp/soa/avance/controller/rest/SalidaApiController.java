@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import utp.soa.avance.dto.PutTransportistaRequest;
+import utp.soa.avance.dto.TransportistaRequest;
 import utp.soa.avance.model.SalidaProducto;
 import utp.soa.avance.model.Transportista;
 import utp.soa.avance.service.*;
@@ -40,10 +40,16 @@ public class SalidaApiController {
         return ResponseEntity.ok(transportistaService.listTransportistas());
     }
 
+    @PostMapping("/transportistas")
+    @Operation(summary = "Crear un registro de transportista")
+    public ResponseEntity<Transportista> crearTransportista(TransportistaRequest request) {
+        return ResponseEntity.ok(transportistaService.crearTransportista(request.getNombre()));
+    }
+
     @PutMapping("/transportistas/{id}")
     @Operation(summary = "Actualizar un transportista")
     public ResponseEntity<Transportista> actualizarTransportista(@PathVariable("id") Long id,
-                                                                 PutTransportistaRequest request) {
+                                                                 TransportistaRequest request) {
         return ResponseEntity.ok(transportistaService.actualizarTransportista(id,request.getNombre()));
     }
 

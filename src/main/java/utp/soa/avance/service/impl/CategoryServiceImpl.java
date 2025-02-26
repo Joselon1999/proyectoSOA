@@ -18,4 +18,9 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Categoria> listCategoria() {
         return categoryRepository.findAll();
     }
+
+    @Override
+    public Categoria getCategoria(Long id) {
+        return categoryRepository.getReferenceById(id);
+    }
 }

@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class PutTransportistaRequest {
+public class TransportistaRequest {
     private String nombre;
 }

@@ -8,4 +8,6 @@ import java.util.List;
 public interface SubcategoryService {
 
     List<Subcategoria> listSubcategoria();
+
+    Subcategoria getSubcategoria(Long id);
 }

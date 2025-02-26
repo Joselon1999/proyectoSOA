@@ -7,4 +7,6 @@ import java.util.List;
 public interface CategoryService {
 
     List<Categoria> listCategoria();
+
+    Categoria getCategoria(Long id);
 }

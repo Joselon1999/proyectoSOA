@@ -26,7 +26,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/helper/**","/dashboard/**").hasAnyRole("HELPER", "ADMIN")
-                        .requestMatchers("/login","/h2-console").permitAll()
+                        .requestMatchers("/swagger-ui","/api/**","/login","/h2-console").permitAll()
                         .anyRequest().permitAll()
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
